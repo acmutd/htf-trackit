@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>slide8.md</title><style></style></head><body id="preview">
+<h1 class="code-line" data-line-start=0 data-line-end=1><a id="Creating_our_own_endpoint_0"></a>Creating our own endpoint</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="3">Now that we’ve been able to get back <code>hello world</code> as a response lets try to get back <code>hello &lt;name&gt;</code> as a response.</p>
+<p class="has-line-data" data-line-start="4" data-line-end="5">Create a copy of the <code>template.ts</code> file in the <code>/api</code> folder. Rename it to be <code>[yourname].ts</code> instead so that it is unique.</p>
+<h3 class="code-line" data-line-start=6 data-line-end=7><a id="Outline_6"></a>Outline</h3>
+<p class="has-line-data" data-line-start="8" data-line-end="9">In here you should see the outline of the first function as follows</p>
+<pre><code class="has-line-data" data-line-start="11" data-line-end="15" class="language-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> hello_first = <span class="hljs-keyword">async</span> (request: Request, response: Response): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-keyword">void</span>&gt; =&gt; {
+
+}
+</code></pre>
+<p class="has-line-data" data-line-start="16" data-line-end="17">When we complete this endpoint we want it to respond when we call this URL</p>
+<p class="has-line-data" data-line-start="18" data-line-end="19"><code>curl localhost:8079/hello-first-last/yourname</code></p>
+<p class="has-line-data" data-line-start="20" data-line-end="21">=&gt;</p>
+<pre><code class="has-line-data" data-line-start="22" data-line-end="24" class="language-json">{"<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"Hello yourname"</span></span>}
+</code></pre>
+</body></html>
