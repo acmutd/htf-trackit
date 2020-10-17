@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>slide4.md</title><style></style></head><body id="preview">
+    <style>body{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}</style> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css"/> <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script> <script>hljs.initHighlightingOnLoad(); </script>
+<h1 class="code-line" data-line-start=0 data-line-end=1><a id="What_is_HTTP_0"></a>What is HTTP?</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="3">If an API is a code for computers to talk across the internet, then HTTP is the language that they speak. The hyper text transfer protocol is a common protocol that is used to structure data sent over the internet.</p>
+<p class="has-line-data" data-line-start="4" data-line-end="5">HTTP requests have a lot of parts. One part that most people are already familiar with is the URL. Other sections of HTTP requests are the method, request headers, and body.</p>
+<h3 class="code-line" data-line-start=6 data-line-end=7><a id="HTTP_Methods_6"></a><strong>HTTP Methods</strong></h3>
+<ul>
+<li class="has-line-data" data-line-start="7" data-line-end="8">GET: To retrieve data</li>
+<li class="has-line-data" data-line-start="8" data-line-end="9">POST: To send data</li>
+<li class="has-line-data" data-line-start="9" data-line-end="10">PATCH: To update data</li>
+<li class="has-line-data" data-line-start="10" data-line-end="12">DELETE: To delete data</li>
+</ul>
+<p class="has-line-data" data-line-start="12" data-line-end="13">Is this an exhaustive list? No! There’s many many more methods that can be used but these are the most popular options available.</p>
+<h3 class="code-line" data-line-start=13 data-line-end=14><a id="HTTP_Request_Breakdown_13"></a>HTTP Request Breakdown</h3>
+<ul>
+<li class="has-line-data" data-line-start="14" data-line-end="15"><code>GET https://wttr.in/Dallas</code></li>
+<li class="has-line-data" data-line-start="15" data-line-end="17"><code>POST https://sendyourdata.com</code></li>
+</ul>
+<h5 class="code-line" data-line-start=17 data-line-end=18><a id="HEADER_17"></a>HEADER</h5>
+<pre><code class="has-line-data" data-line-start="19" data-line-end="29" class="language-json">{
+    "<span class="hljs-attribute">Accept-Language</span>": <span class="hljs-value"><span class="hljs-string">"en-us"</span></span>,
+    "<span class="hljs-attribute">Host</span>": <span class="hljs-value"><span class="hljs-string">"github.com"</span></span>,
+    "<span class="hljs-attribute">User-Agent</span>": <span class="hljs-value"><span class="hljs-string">"Macintosh; Intel Mac OS X 10_15_6..."</span></span>,
+    "<span class="hljs-attribute">Referer</span>": <span class="hljs-value"><span class="hljs-string">"https://github.com/acmutd/htf-development"</span></span>,
+    "<span class="hljs-attribute">Accept-Encoding</span>": <span class="hljs-value"><span class="hljs-string">"gzip, deflate, br"</span></span>,
+    "<span class="hljs-attribute">Connection</span>": <span class="hljs-value"><span class="hljs-string">"keep-alive"</span></span>,
+    "<span class="hljs-attribute">X-Requested-With</span>": <span class="hljs-value"><span class="hljs-string">"XMLHttpRequest"</span>
+</span>}
+</code></pre>
+<h5 class="code-line" data-line-start=29 data-line-end=30><a id="BODY_29"></a>BODY</h5>
+<pre><code class="has-line-data" data-line-start="31" data-line-end="38" class="language-json">{
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Temoc"</span></span>,
+    "<span class="hljs-attribute">university</span>": <span class="hljs-value"><span class="hljs-string">"UT Dallas"</span></span>,
+    "<span class="hljs-attribute">degree</span>": <span class="hljs-value"><span class="hljs-string">"Computer Science"</span></span>,
+    "<span class="hljs-attribute">CC</span>": <span class="hljs-value"><span class="hljs-string">"1234 5678 1234 5678"</span>
+</span>}
+</code></pre>
+</body></html>

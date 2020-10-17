@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Creating a second endpoint.md</title><style></style></head><body id="preview">
+    <style>body{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}</style> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css"/> <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script> <script>hljs.initHighlightingOnLoad(); </script>
+    <h1 class="code-line" data-line-start=0 data-line-end=1><a id="Creating_a_second_endpoint_0"></a>Creating a second endpoint</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="3">We’ve also set up some drivers that let you create your endpoint on ACM servers! Since you don’t have your data locally, we’ll be having you fill out some basic info which we’ll merge into our own code.</p>
+<p class="has-line-data" data-line-start="4" data-line-end="5">We’ll deploy everyone’s code at the end, and you will be able to request your data from us!</p>
+<h2 class="code-line" data-line-start=6 data-line-end=7><a id="Find_this_section_in_your_code_6"></a>Find this section in your code:</h2>
+<pre><code class="has-line-data" data-line-start="9" data-line-end="22" class="language-js"><span class="hljs-comment">//           ↓ replace this with your first and last name</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> first_last = <span class="hljs-keyword">async</span> (request: Request, response: Response): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-keyword">void</span>&gt; =&gt; {
+    <span class="hljs-keyword">const</span> baseurl = functions.config().baseurl.firebase; <span class="hljs-comment">// resolves to https://cloudfunctions.net</span>
+    <span class="hljs-keyword">const</span> data = {
+        email: <span class="hljs-string">"<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfd7decdccd7decccdd6d4decddeffd8d2ded6d391dcd0d2">[email&#160;protected]</a>"</span> <span class="hljs-comment">// &lt;- update with your email</span>
+    }
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> axios.default.post(baseurl, data);
+    <span class="hljs-keyword">const</span> res = result.data;
+    response.json({
+        result: res
+    });
+}
+</code></pre>
+<p class="has-line-data" data-line-start="23" data-line-end="24">Update the data object to have your email instead of the included one. Make sure to put the email you used to register for Hacktoberfest.</p>
+<p class="has-line-data" data-line-start="25" data-line-end="26">Also update the name of the function to be your own first and last name</p>
+<h1 class="code-line" data-line-start=27 data-line-end=28><a id="Linking_code_to_endpoint_27"></a>Linking code to endpoint</h1>
+<p class="has-line-data" data-line-start="29" data-line-end="30">Return to the <code>index.ts</code> file and connect your endpoint to the code you just wrote. Assuming you renamed your function to <code>temoc_utd</code> you should have this as follows in your file.</p>
+<pre><code class="has-line-data" data-line-start="32" data-line-end="40" class="language-ts"><span class="hljs-keyword">import</span> { hello_temoc, temoc_utd } from <span class="hljs-string">"./api/temoc"</span>
+
+app.get(<span class="hljs-string">"/hello-first-last/:name"</span>, hello_first);
+
+<span class="hljs-comment">//add your endpoint in addition to the default one</span>
+app.get(<span class="hljs-string">"/hello-temoc-utd/:name"</span>, hello_temoc);
+app.get(<span class="hljs-string">"/temoc-utd"</span>, temoc_utd);
+</code></pre>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
