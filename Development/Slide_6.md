@@ -12,7 +12,8 @@ To run the code locally we have a couple of easy steps
 
  - `cd htf-development` (to open the workshop folder)
  - `cd functions` (to open the folder with the code)
+ - `npm install` (to install our dependencies)
  - `npm run build` (to compile the code)
  - `npm run dev` (to start running the code)
 
-Note: Ignore any errors mentioned about firebase at this point. It's just a warning that express detects certain uninitialized variables.
+Note: Ignore any warnings from firebase at this point. It's just a warning that express detects certain uninitialized variables.
