@@ -22,6 +22,6 @@ In the above code snippet we are defining a variable called `name` as anything t
 Repeat the process to run your code and test it by calling your endpoint as such
 
 ```sh
-$ curl localhost:1234/hello-temoc-utd/temoc 
+$ curl localhost:8079/hello-temoc-utd/temoc 
 {"message":"hello temoc"}
 ```

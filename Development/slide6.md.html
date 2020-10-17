@@ -1,11 +1,10 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>slide6.md</title><style></style></head><body id="preview">
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Setting Up.md</title><style></style></head><body id="preview">
     <style>body{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}</style> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css"/> <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script> <script>hljs.initHighlightingOnLoad(); </script>
-
-    <h1 class="code-line" data-line-start=0 data-line-end=1><a id="Setting_Up_0"></a>Setting Up</h1>
+<h1 class="code-line" data-line-start=0 data-line-end=1><a id="Setting_Up_0"></a>Setting Up</h1>
 <p class="has-line-data" data-line-start="2" data-line-end="3">For this workshop, you’ll need two things</p>
 <ul>
 <li class="has-line-data" data-line-start="3" data-line-end="4">A text editor, we suggest Visual Studio Code, but use whatever you’re comfortable with!</li>
-<li class="has-line-data" data-line-start="4" data-line-end="6">Node.js. Make sure to install the <code>12.19.0</code> version (for mac users use this link and click macOS installer)</li>
+<li class="has-line-data" data-line-start="4" data-line-end="6"><a href="https://nodejs.org/en/download/">Node.js</a>. Make sure to install the <code>12.19.0</code> version. If you get a prompt about adding to path, be sure to click yes!</li>
 </ul>
 <p class="has-line-data" data-line-start="6" data-line-end="7">After it’s installed, if you open your terminal and type <code>node -v</code> in your command line and you see something like <code>v12.10.0</code> Then you will know Node.js is installed correctly!</p>
 <h3 class="code-line" data-line-start=8 data-line-end=9><a id="Running_the_Code_8"></a>Running the Code</h3>
@@ -13,8 +12,9 @@
 <ul>
 <li class="has-line-data" data-line-start="12" data-line-end="13"><code>cd htf-development</code> (to open the workshop folder)</li>
 <li class="has-line-data" data-line-start="13" data-line-end="14"><code>cd functions</code> (to open the folder with the code)</li>
-<li class="has-line-data" data-line-start="14" data-line-end="15"><code>npm run build</code> (to compile the code)</li>
-<li class="has-line-data" data-line-start="15" data-line-end="17"><code>npm run dev</code> (to start running the code)</li>
+<li class="has-line-data" data-line-start="14" data-line-end="15"><code>npm install</code> (to install our dependencies)</li>
+<li class="has-line-data" data-line-start="15" data-line-end="16"><code>npm run build</code> (to compile the code)</li>
+<li class="has-line-data" data-line-start="16" data-line-end="18"><code>npm run dev</code> (to start running the code)</li>
 </ul>
-<p class="has-line-data" data-line-start="17" data-line-end="18">Note: Ignore any errors mentioned about firebase at this point. It’s just a warning that express detects certain uninitialized variables.</p>
+<p class="has-line-data" data-line-start="18" data-line-end="19">Note: Ignore any warnings from firebase at this point. It’s just a warning that express detects certain uninitialized variables.</p>
 </body></html>
