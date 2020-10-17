@@ -9,6 +9,6 @@ curl localhost:8079/hello
 You should get something that looks like this:
 
 ```sh
-$ curl localhost:1234/hello  
+$ curl localhost:8079/hello  
 {"message":"hello world!"}
 ```
