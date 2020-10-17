@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Launch Notebook.md</title>
+		<style>
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+					Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+					"Segoe UI Symbol";
+			}
+		</style>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css"
+		/>
+	</head>
+	<body id="preview">
+		<h1 class="code-line" data-line-start="0" data-line-end="1">
+			<a id="More_About_DataFrames_0"></a>More About DataFrames
+		</h1>
+		<p class="has-line-data" data-line-start="2" data-line-end="3">
+			DataFrames are internally like 2D dictionaries, where you can access a
+			specific cell by column and index, or row and index.
+		</p>
+		<p class="has-line-data" data-line-start="4" data-line-end="5">
+			They’re powerful structures that allow you to manipulate data just as fast
+			or even faster than Excel. They also speak Excel, allowing you to go from
+			DataFrame to and from spreadsheet pretty easily.
+		</p>
+		<h1 class="code-line" data-line-start="6" data-line-end="7">
+			<a id="How_ElementWise_Operations_Work_6"></a>How Element-Wise Operations
+			Work
+		</h1>
+		<p class="has-line-data" data-line-start="8" data-line-end="9">
+			Internally, whem you do things like <code>max()</code> and
+			<code>min()</code>, Pandas uses element-wise operations on a column,
+			meaning it goes through every single value in that column automatically
+			and creates a new column with the values, which you can keep separate or
+			add it to the table.
+		</p>
+		<h1 class="code-line" data-line-start="10" data-line-end="11">
+			<a id="How_loc_Works_10"></a>How <code>.loc</code> Works
+		</h1>
+		<p class="has-line-data" data-line-start="12" data-line-end="13">
+			How the <code>.loc</code> method works is that
+			<code>price_history['Diff'] == max_diff</code> generates a new table with
+			just True and False values, which <code>.loc</code> uses as a condition to
+			indicate whether or not the particular row should be included within the
+			result set. It then returns the rows that match.
+		</p>
+		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
+		<script>
+			hljs.initHighlightingOnLoad();
+		</script>
+	</body>
+</html>

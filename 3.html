@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Launch Notebook.md</title>
+		<style>
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+					Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+					"Segoe UI Symbol";
+			}
+		</style>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css"
+		/>
+	</head>
+	<body id="preview">
+		<h1 class="code-line" data-line-start="0" data-line-end="1">
+			<a id="PEG_Ratio_Resources_0"></a>PEG Ratio Resources
+		</h1>
+		<p class="has-line-data" data-line-start="2" data-line-end="3">
+			For more information about the PEG ratio of a stock:
+			<a
+				href="https://www.schwab.com/resource-center/insights/stock-analysis-using-the-peg-ratio"
+				>https://www.schwab.com/resource-center/insights/stock-analysis-using-the-peg-ratio</a
+			>
+		</p>
+		<h1 class="code-line" data-line-start="4" data-line-end="5">
+			<a id="EPS_Ratio_Resources_4"></a>EPS Ratio Resources
+		</h1>
+		<p class="has-line-data" data-line-start="6" data-line-end="7">
+			For more information on the EPS of a stock:
+			<a href="https://www.investopedia.com/terms/e/eps.asp"
+				>https://www.investopedia.com/terms/e/eps.asp</a
+			>
+		</p>
+		<h1 class="code-line" data-line-start="8" data-line-end="9">
+			<a id="Annotated_save_graph_Method_8"></a>Annotated
+			<code>save_graph()</code> Method
+		</h1>
+		<pre><code class="has-line-data" data-line-start="11" data-line-end="56" class="language-python"><span class="hljs-comment"># save_graph method</span>
+<span class="hljs-string">"""
+save_graph()
+- Generates an infographic.
+"""</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">save_graph</span><span class="hljs-params">(ticker, price_history, logo_url, short_name, industry, discord_tag, overvalued, peg_ratio)</span>:</span>
+    <span class="hljs-comment"># generates the words 'overvalued' or 'undervalued'</span>
+    ov_txt = <span class="hljs-string">'overvalued'</span> <span class="hljs-keyword">if</span> overvalued <span class="hljs-keyword">else</span> <span class="hljs-string">'undervalued'</span>
+    <span class="hljs-comment"># avoid axis overlap</span>
+    fig = plt.figure(figsize=(<span class="hljs-number">10</span>,<span class="hljs-number">12</span>), dpi=<span class="hljs-number">300</span>, constrained_layout=<span class="hljs-keyword">True</span>)
+    <span class="hljs-comment"># Use GridSpec for customising layout</span>
+    <span class="hljs-comment"># This makes a 6x4 grid for laying out our infographic</span>
+    gs = fig.add_gridspec(nrows=<span class="hljs-number">6</span>, ncols=<span class="hljs-number">4</span>)
+    <span class="hljs-comment"># Logo image</span>
+    logo_image = fig.add_subplot(gs[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>])
+    logo_image.axis(<span class="hljs-string">'off'</span>)
+    <span class="hljs-comment"># This will download our image into `logo.png`</span>
+    urllib.request.urlretrieve(logo_url, <span class="hljs-string">'logo.png'</span>)
+    stock_image = plt.imread(<span class="hljs-string">'logo.png'</span>)
+    <span class="hljs-comment"># This will put the image on our infographic</span>
+    logo_image.imshow(stock_image)
+    <span class="hljs-comment"># Text</span>
+    text = fig.add_subplot(gs[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>:])
+    text.axis(<span class="hljs-string">'off'</span>)
+    <span class="hljs-comment"># This will put text on our infographic</span>
+    text.text(<span class="hljs-number">0</span>, <span class="hljs-number">0.7</span>, short_name, horizontalalignment=<span class="hljs-string">'left'</span>, verticalalignment=<span class="hljs-string">'center'</span>, fontsize=<span class="hljs-number">30</span>, fontweight=<span class="hljs-string">'bold'</span>)
+    text.text(<span class="hljs-number">0</span>, <span class="hljs-number">0.4</span>, f<span class="hljs-string">'Ticker: {ticker}'</span>, horizontalalignment=<span class="hljs-string">'left'</span>, verticalalignment=<span class="hljs-string">'center'</span>, fontsize=<span class="hljs-number">20</span>)
+    text.text(<span class="hljs-number">0</span>, <span class="hljs-number">0.0</span>, f<span class="hljs-string">'{industry}'</span>, horizontalalignment=<span class="hljs-string">'left'</span>, verticalalignment=<span class="hljs-string">'bottom'</span>, fontsize=<span class="hljs-number">20</span>, fontstyle=<span class="hljs-string">'italic'</span>)
+    <span class="hljs-comment"># Overvalued?</span>
+    ov = fig.add_subplot(gs[<span class="hljs-number">1</span>, :])
+    ov.axis(<span class="hljs-string">'off'</span>)
+    <span class="hljs-comment"># This will put your discord tag and the overvalued evaluation on here</span>
+    ov.text(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.85</span>, f<span class="hljs-string">'{discord_tag}'</span>, horizontalalignment=<span class="hljs-string">'center'</span>, verticalalignment=<span class="hljs-string">'center'</span>, fontsize=<span class="hljs-number">30</span>, fontweight=<span class="hljs-string">'bold'</span>)
+    ov.text(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.65</span>, f<span class="hljs-string">'determined this stock was'</span>, horizontalalignment=<span class="hljs-string">'center'</span>, verticalalignment=<span class="hljs-string">'top'</span>, fontsize=<span class="hljs-number">20</span>)
+    ov.text(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.00</span>, f<span class="hljs-string">'{ov_txt}'</span>, horizontalalignment=<span class="hljs-string">'center'</span>, verticalalignment=<span class="hljs-string">'bottom'</span>, fontsize=<span class="hljs-number">40</span>, fontweight=<span class="hljs-string">'bold'</span>, color=<span class="hljs-string">'darkred'</span>)
+    <span class="hljs-comment"># Graph</span>
+    stock_graph = fig.add_subplot(gs[<span class="hljs-number">2</span>:<span class="hljs-number">5</span>, :])
+    stock_graph.set_title(<span class="hljs-string">'YTD Stock Price'</span>)
+    stock_graph.plot(price_history.index, price_history[<span class="hljs-string">'Close'</span>], linewidth=<span class="hljs-number">3</span>)
+    <span class="hljs-comment"># Display PEG ratio</span>
+    peg = fig.add_subplot(gs[<span class="hljs-number">5</span>, :])
+    peg.axis(<span class="hljs-string">'off'</span>)
+    peg.text(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>, f<span class="hljs-string">'PEG Ratio: {peg_ratio}'</span>, horizontalalignment=<span class="hljs-string">'center'</span>, verticalalignment=<span class="hljs-string">'center'</span>, fontsize=<span class="hljs-number">30</span>, fontstyle=<span class="hljs-string">'italic'</span>, fontweight=<span class="hljs-string">'bold'</span>)
+    plt.savefig(f<span class="hljs-string">'{ticker}.png'</span>, facecolor=<span class="hljs-string">'white'</span>, transparent=<span class="hljs-keyword">True</span>, bbox_inches=<span class="hljs-string">'tight'</span>)
+</code></pre>
+		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
+		<script>
+			hljs.initHighlightingOnLoad();
+		</script>
+	</body>
+</html>

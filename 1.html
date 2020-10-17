@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Launch Notebook.md</title>
+		<style>
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+					Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+					"Segoe UI Symbol";
+			}
+		</style>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css"
+		/>
+	</head>
+	<body id="preview">
+		<h1 class="code-line" data-line-start="0" data-line-end="1">
+			<a id="Launch_Notebook_0"></a>Launch Notebook
+		</h1>
+		<p class="has-line-data" data-line-start="2" data-line-end="3">
+			Click the button below to launch this workshop’s notebook in Google
+			Colaboratory, an online environment for Python.
+		</p>
+		<p class="has-line-data" data-line-start="4" data-line-end="5">
+			<a
+				href="https://colab.research.google.com/github/acmutd/htf-research/blob/main/starter-notebook.ipynb"
+				><img
+					src="https://colab.research.google.com/assets/colab-badge.svg"
+					alt="Open In Colab"
+			/></a>
+		</p>
+		<h1 class="code-line" data-line-start="7" data-line-end="8">
+			<a id="Libraries_7"></a>Libraries
+		</h1>
+		<p class="has-line-data" data-line-start="9" data-line-end="10">
+			<em>Libraries</em> are reusable bits of code that help you achieve certain
+			tasks. For example, in this workshop, we’re using the yfinance library to
+			download stock data from Yahoo Finance.
+		</p>
+		<p class="has-line-data" data-line-start="11" data-line-end="12">
+			Some other examples of libraries we’ll be using in this workshop include
+			Pandas and Matplotlib.
+		</p>
+		<h1 class="code-line" data-line-start="13" data-line-end="14">
+			<a id="Dictionaries_13"></a>Dictionaries
+		</h1>
+		<p class="has-line-data" data-line-start="15" data-line-end="16">
+			<em>Dictionaries</em> allow you to access different values by using a
+			string, called a key. Dictionaries are also called hashmaps in other
+			programming languages. Dictionaries are really useful when grouping
+			related values together:
+		</p>
+		<pre><code class="has-line-data" data-line-start="18" data-line-end="27" class="language-python">money_owed = {
+    <span class="hljs-string">'john'</span>: <span class="hljs-number">20</span>,
+    <span class="hljs-string">'jack'</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-string">'lisa'</span>: <span class="hljs-number">12</span>
+}
+
+print(money_owed[<span class="hljs-string">'lisa'</span>]) <span class="hljs-comment"># prints 12</span>
+
+</code></pre>
+		<h1 class="code-line" data-line-start="28" data-line-end="29">
+			<a id="String_Interpolation_28"></a>String Interpolation
+		</h1>
+		<p class="has-line-data" data-line-start="30" data-line-end="31">
+			<em>String interpolation</em> allows you to insert values into strings
+			without needing to combine multiple smaller strings together. Here’s an
+			example where string interpolation is useful:
+		</p>
+		<pre><code class="has-line-data" data-line-start="33" data-line-end="44" class="language-python">name = <span class="hljs-string">'John'</span>
+preferred_drink = <span class="hljs-string">'Vanilla Cold Brew'</span>
+uber_eta = <span class="hljs-number">10</span>
+
+
+<span class="hljs-comment"># Before</span>
+print(<span class="hljs-string">'Hello, '</span> + name + <span class="hljs-string">'! Your '</span> + preferred_drink + <span class="hljs-string">' is on the kitchen counter and your Uber arrives in '</span> + uber_eta + <span class="hljs-string">' minutes.'</span>)
+
+<span class="hljs-comment"># After</span>
+print(f<span class="hljs-string">'Hello, {name}! Your {preferred_drink} is on the kitchen counter and your Uber arrives in {uber_eta} minutes.'</span>)
+</code></pre>
+		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
+		<script>
+			hljs.initHighlightingOnLoad();
+		</script>
+	</body>
+</html>
